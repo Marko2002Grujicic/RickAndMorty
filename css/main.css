@@ -1,0 +1,195 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+#wrapper {
+  background-image: url("../images/./103681-Rick-and-Morty-space-planet-planetary-rings.png");
+  height: 100vh;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+#header {
+  height: 7vh;
+  background-color: #242424;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  align-self: stretch;
+}
+#search-wrapper {
+  position: relative;
+  width: 200px;
+}
+#search-dropdown {
+  color: black;
+  background-color: white;
+  width: 200px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  border-radius: 10px;
+}
+#search-wrapper input {
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 20px;
+}
+.search-item {
+  border-bottom: 1px solid #3c3b3b;
+}
+.search-item:hover {
+  background-color: #03afc9;
+}
+#home-button {
+  cursor: pointer;
+}
+
+#main-content {
+  height: calc(100vh - 14vh);
+  scroll-behavior: smooth;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 5vh;
+  background-color: #242424;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  width: 100%;
+}
+/* Character Styling */
+#character-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 70vw;
+  gap: 10px;
+  padding: 24px 0 0 24px;
+}
+.character-item {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  margin-bottom: 5%;
+  width: 30%;
+  border-radius: 13px;
+}
+.character-item img:hover,
+.character-item div:hover {
+  cursor: pointer;
+}
+
+.character-item p {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  font-weight: 500;
+  width: 100%;
+}
+.character-item img {
+  width: 90%;
+  padding-top: 5%;
+}
+/* Button Styling */
+.like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: green;
+  width: 50%;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid green;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.fa-thumbs-up {
+  font-size: 20px;
+  color: green;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  text-transform: lowercase;
+  width: 100%;
+  height: 100%;
+}
+/* Afterclick effects */
+.clicked {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+}
+/* Single card rendering */
+.detail-wrapper {
+  background-color: white;
+  height: 85vh;
+  width: 50vw;
+  border: 5px solid #03afc9;
+  padding: 5px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+.detail-wrapper h1,
+h2 {
+  font-size: 50px;
+  background-color: #03afc9;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.single-page-image {
+  width: 50%;
+  height: 60%;
+  align-self: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.bio {
+  height: 60%;
+  width: 100%;
+}
+.bio h2 {
+  font-size: 40px;
+}
+.bio-extra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 18%;
+  gap: 20px;
+}
+.darkerBg {
+  font-size: 30px;
+  text-align: center;
+  width: 50%;
+  background-color: #f5f4e5;
+  color: #3d98ac;
+  font-weight: bold;
+}
+.ligherBg {
+  font-size: 30px;
+  width: 50%;
+  background-color: #f3f2e4;
+  color: #4cbad6;
+  text-align: center;
+}
