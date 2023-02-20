@@ -53,26 +53,21 @@ const onSingleCharacterClick = (e) => {
     }
 }
 
-const changeLikeButtonColorToGreen = (e) =>{
-    const eTarget = e.target;
-    const eTarget2 = eTarget.parentElement;
-    if (eTarget2.classList.contains('character-item')){
-        return;
-    }
-    if (eTarget.classList.contains('like')){
-        eTarget.classList.add('clicked');
-        eTarget2.classList.add('clicked');
-    }
-}
+const toggleLikeButtonColor = (e) => {
+  const likeButton = e.target;
+  if (!likeButton.classList.contains('like')) {
+    return;
+  }
+  likeButton.classList.toggle('clicked');
+};
 
   
 onClickHomeButtonHandler();
 homeButtonEl.addEventListener('click',onClickHomeButtonHandler);
 mainContentWrapper.addEventListener('click', onSingleCharacterClick);
-mainContentWrapper.addEventListener('click',changeLikeButtonColorToGreen);
-searchInput.addEventListener('keydown', onSearch);
+mainContentWrapper.addEventListener('click',toggleLikeButtonColor);
+searchInput.addEventListener('keyup', onSearch);
 searchDropdownEl.addEventListener('click', onSearchDropdownClick);
-searchDropdownEl.addEventListener('blur', clearDropdown());
 
 
 

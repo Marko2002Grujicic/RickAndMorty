@@ -40,12 +40,15 @@ export const getSingleCharacter = (id) => {
     })
 }
 export const searchCharacter = (term) => {
+    if (term === ''){
+        return Promise.resolve([]);
+    }
     return fetch (`https://rickandmortyapi.com/api/character/?name=${term}`)
     .then(function (res){
         return res.json();
     })
     .then(function (characterRawObjects){
         let slicedSearchCharObj = characterRawObjects.results;
-        return slicedSearchCharObj;
-    })
+        return slicedSearchCharObj.map(({name, id, image}) => new Character(name,id, image));
+    });
 }

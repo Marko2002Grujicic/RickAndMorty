@@ -10,7 +10,7 @@ export const renderHomePage = (characters) => {
              <div class="character-item" id="${character.id}">
                  <img src="${character.image}" alt="show cover image" id="gateway"/>
                 <p>${character.name}</p>
-                <div id='like' class="like"><i class="fa-solid fa-thumbs-up like"> Like</i> </div>
+                <button id='like' class="like"><i class="fa-solid fa-thumbs-up like"> Like</i> </button>
              </div>
             `;
     });
@@ -56,15 +56,20 @@ export const renderSingleCharacterPage = (character) => {
 
 export const renderSearchDropdown = (character) => {
     let maxTenChar = character.slice(0,5);
-    maxTenChar.forEach((maxTenChar) => {
-      const itemEl = document.createElement('div');
-      itemEl.setAttribute('id', maxTenChar.id);
-      itemEl.classList.add('search-item');
-      itemEl.textContent = maxTenChar.name;
-      searchDropdownEl.appendChild(itemEl);
-    });
+    console.log(maxTenChar);
+    if (maxTenChar.length > 0){
+        maxTenChar.forEach((maxTenChar) => {
+            const itemEl = document.createElement('div');
+            itemEl.setAttribute('id', maxTenChar.id);
+            itemEl.classList.add('search-item');
+            itemEl.textContent = maxTenChar.name;
+            searchDropdownEl.appendChild(itemEl);
+          });
+    }
+    
   };
 
 export const clearDropdown = () => {
-    searchDropdownEl.innerHTML = ``;
+    searchDropdownEl.innerHTML = "";
+    console.log(searchDropdownEl.innerHTML);
   };
